@@ -17,7 +17,7 @@ class CorpusManager(object):
 	"""
 
 	# Path to corpus data.
-	DATA_DIRPATH = "/home/ndg/project/users/hvala/andrews-challenge/data"
+	DATA_DIRPATH = "../data"
 
 	# Path to texts directory.
 	TEXTS_DIRPATH = os.path.join(DATA_DIRPATH, 'texts')
