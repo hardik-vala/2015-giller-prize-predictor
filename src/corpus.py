@@ -17,7 +17,7 @@ class CorpusManager(object):
 	"""
 
 	# Path to corpus data.
-	DATA_DIRPATH = "../data"
+	DATA_DIRPATH = os.path.join('..', 'data')
 
 	# Path to texts directory.
 	TEXTS_DIRPATH = os.path.join(DATA_DIRPATH, 'texts')
