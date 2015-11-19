@@ -1,0 +1,5 @@
+*.pyc
+
+# Ignore data files but the README ensures it gets checked-in to the repo.
+data/*
+!data/README.txt
