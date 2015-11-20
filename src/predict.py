@@ -129,7 +129,7 @@ def main():
 		# Unigrams, bigrams, and unigrams + bigrams
 		'ngram_range': [(1,1), (2, 2), (1, 2)],
 		'with_tfidf': [True, False],
-		'pca_comps': [100, 200, 500, 1000, 10000, None],
+		'pca_comps': [100, 200, 500, 1000],
 		'model': [linear_model.LogisticRegression()]
 	}
 
@@ -238,7 +238,7 @@ def main():
 	logging.info("And the winner of the 2015 Giller Prize is...")
 	
 	# Get story Id's for 2015 longlist stories.
-	sids_test = corpus_manager.get_ids(sub_jury_2015[0])
+	sids_test = corpus_manager.get_ids(sub_test[0])
 
 	# Determine the winner by taking the story attributed the highest
 	# confidence by the model.
