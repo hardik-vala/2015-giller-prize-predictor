@@ -240,6 +240,9 @@ def main():
 	# Get story Id's for 2015 longlist stories.
 	sids_test = corpus_manager.get_ids(sub_test[0])
 
+	# Confidence scores for all stories in the 2015 longlist.
+	confs = []
+
 	# Determine the winner by taking the story attributed the highest
 	# confidence by the model.
 	win_conf, win_idx = 0.0, None
@@ -248,11 +251,18 @@ def main():
 		# between the classifier probability and the difference score
 		# calculated above.
 		conf = 0.7 * row[1] + 0.3 * (1 - diffs[i])
+
+		confs.append(conf) 
+
 		if win_conf <= conf:
 			win_conf, win_idx = conf, i
 
 	logging.info("* %s! (with confidence %.4f) *" % (sids_test[win_idx],
 		win_conf))
+
+	logging.info("All the confidences...")
+	for i, conf in enumerate(confs):
+		logging.info("%s: %0.4f" % (sids_test[i], conf))
 
 
 if __name__ == '__main__':
